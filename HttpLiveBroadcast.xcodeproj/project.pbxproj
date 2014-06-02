@@ -16,22 +16,28 @@
 		3560F4C7193260B400C282F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3560F4C5193260B400C282F1 /* Main.storyboard */; };
 		3560F4CA193260B400C282F1 /* PandaVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560F4C9193260B400C282F1 /* PandaVideoViewController.m */; };
 		3560F4CC193260B400C282F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3560F4CB193260B400C282F1 /* Images.xcassets */; };
-		3560F4D3193260B400C282F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4D2193260B400C282F1 /* XCTest.framework */; };
-		3560F4D4193260B400C282F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4B3193260B400C282F1 /* Foundation.framework */; };
-		3560F4D5193260B400C282F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4B7193260B400C282F1 /* UIKit.framework */; };
-		3560F4DD193260B400C282F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3560F4DB193260B400C282F1 /* InfoPlist.strings */; };
-		3560F4DF193260B400C282F1 /* HttpLiveBroadcastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560F4DE193260B400C282F1 /* HttpLiveBroadcastTests.m */; };
+		3560F4EA1932629B00C282F1 /* PandaVideoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560F4E91932629B00C282F1 /* PandaVideoLib.m */; };
+		3560F4ED193262B800C282F1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4EC193262B800C282F1 /* CoreMedia.framework */; };
+		3560F4EF193262C000C282F1 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4EE193262C000C282F1 /* CoreVideo.framework */; };
+		3560F4F1193262C800C282F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4F0193262C800C282F1 /* AVFoundation.framework */; };
+		3560F4F3193262D000C282F1 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4F2193262D000C282F1 /* CoreAudio.framework */; };
+		35F13FF91937569200133171 /* PandaVideoFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F13FF81937569200133171 /* PandaVideoFileUpload.m */; };
+		35F1405119379EC700133171 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400019379EC700133171 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405219379EC700133171 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400319379EC700133171 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405319379EC700133171 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400519379EC700133171 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405419379EC700133171 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400719379EC700133171 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405519379EC700133171 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400919379EC700133171 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405619379EC700133171 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400B19379EC700133171 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405719379EC700133171 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400F19379EC700133171 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405819379EC700133171 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1401119379EC700133171 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F1405919379EC700133171 /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1401519379EC700133171 /* ASIWebPageRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35F140771937A03100133171 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F140761937A03100133171 /* CFNetwork.framework */; };
+		35F140791937A03900133171 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F140781937A03900133171 /* SystemConfiguration.framework */; };
+		35F1407B1937A04200133171 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F1407A1937A04200133171 /* MobileCoreServices.framework */; };
+		35F1407F1937A05900133171 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F1407E1937A05900133171 /* libz.dylib */; };
+		35F140811937A10800133171 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F140801937A10800133171 /* libxml2.2.dylib */; };
+		35F140851937A23300133171 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F140841937A23300133171 /* Reachability.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3560F4D6193260B400C282F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3560F4A8193260B400C282F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3560F4AF193260B400C282F1;
-			remoteInfo = HttpLiveBroadcast;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3560F4B0193260B400C282F1 /* HttpLiveBroadcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpLiveBroadcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,11 +54,48 @@
 		3560F4C8193260B400C282F1 /* PandaVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PandaVideoViewController.h; sourceTree = "<group>"; };
 		3560F4C9193260B400C282F1 /* PandaVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandaVideoViewController.m; sourceTree = "<group>"; };
 		3560F4CB193260B400C282F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3560F4D1193260B400C282F1 /* HttpLiveBroadcastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HttpLiveBroadcastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3560F4D2193260B400C282F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3560F4DA193260B400C282F1 /* HttpLiveBroadcastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HttpLiveBroadcastTests-Info.plist"; sourceTree = "<group>"; };
 		3560F4DC193260B400C282F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3560F4DE193260B400C282F1 /* HttpLiveBroadcastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpLiveBroadcastTests.m; sourceTree = "<group>"; };
+		3560F4E81932629B00C282F1 /* PandaVideoLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaVideoLib.h; sourceTree = "<group>"; };
+		3560F4E91932629B00C282F1 /* PandaVideoLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaVideoLib.m; sourceTree = "<group>"; };
+		3560F4EC193262B800C282F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3560F4EE193262C000C282F1 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3560F4F0193262C800C282F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3560F4F2193262D000C282F1 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		35F13FF71937569200133171 /* PandaVideoFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaVideoFileUpload.h; sourceTree = "<group>"; };
+		35F13FF81937569200133171 /* PandaVideoFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaVideoFileUpload.m; sourceTree = "<group>"; };
+		35F13FFF19379EC700133171 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		35F1400019379EC700133171 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		35F1400119379EC700133171 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		35F1400219379EC700133171 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		35F1400319379EC700133171 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		35F1400419379EC700133171 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		35F1400519379EC700133171 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		35F1400619379EC700133171 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		35F1400719379EC700133171 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		35F1400819379EC700133171 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		35F1400919379EC700133171 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		35F1400A19379EC700133171 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		35F1400B19379EC700133171 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		35F1400C19379EC700133171 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		35F1400D19379EC700133171 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		35F1400E19379EC700133171 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		35F1400F19379EC700133171 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		35F1401019379EC700133171 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		35F1401119379EC700133171 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		35F1401219379EC700133171 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		35F1401419379EC700133171 /* ASIWebPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIWebPageRequest.h; sourceTree = "<group>"; };
+		35F1401519379EC700133171 /* ASIWebPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIWebPageRequest.m; sourceTree = "<group>"; };
+		35F140761937A03100133171 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		35F140781937A03900133171 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		35F1407A1937A04200133171 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		35F1407C1937A05100133171 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		35F1407E1937A05900133171 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		35F140801937A10800133171 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		35F140831937A23300133171 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		35F140841937A23300133171 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,19 +103,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F140811937A10800133171 /* libxml2.2.dylib in Frameworks */,
+				35F1407F1937A05900133171 /* libz.dylib in Frameworks */,
+				35F1407B1937A04200133171 /* MobileCoreServices.framework in Frameworks */,
+				35F140791937A03900133171 /* SystemConfiguration.framework in Frameworks */,
+				35F140771937A03100133171 /* CFNetwork.framework in Frameworks */,
+				3560F4F3193262D000C282F1 /* CoreAudio.framework in Frameworks */,
+				3560F4F1193262C800C282F1 /* AVFoundation.framework in Frameworks */,
+				3560F4EF193262C000C282F1 /* CoreVideo.framework in Frameworks */,
+				3560F4ED193262B800C282F1 /* CoreMedia.framework in Frameworks */,
 				3560F4B6193260B400C282F1 /* CoreGraphics.framework in Frameworks */,
 				3560F4B8193260B400C282F1 /* UIKit.framework in Frameworks */,
 				3560F4B4193260B400C282F1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3560F4CE193260B400C282F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3560F4D3193260B400C282F1 /* XCTest.framework in Frameworks */,
-				3560F4D5193260B400C282F1 /* UIKit.framework in Frameworks */,
-				3560F4D4193260B400C282F1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				3560F4B0193260B400C282F1 /* HttpLiveBroadcast.app */,
-				3560F4D1193260B400C282F1 /* HttpLiveBroadcastTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +142,16 @@
 		3560F4B2193260B400C282F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35F140801937A10800133171 /* libxml2.2.dylib */,
+				35F1407E1937A05900133171 /* libz.dylib */,
+				35F1407C1937A05100133171 /* libz.1.1.3.dylib */,
+				35F1407A1937A04200133171 /* MobileCoreServices.framework */,
+				35F140781937A03900133171 /* SystemConfiguration.framework */,
+				35F140761937A03100133171 /* CFNetwork.framework */,
+				3560F4F2193262D000C282F1 /* CoreAudio.framework */,
+				3560F4F0193262C800C282F1 /* AVFoundation.framework */,
+				3560F4EE193262C000C282F1 /* CoreVideo.framework */,
+				3560F4EC193262B800C282F1 /* CoreMedia.framework */,
 				3560F4B3193260B400C282F1 /* Foundation.framework */,
 				3560F4B5193260B400C282F1 /* CoreGraphics.framework */,
 				3560F4B7193260B400C282F1 /* UIKit.framework */,
@@ -115,10 +166,10 @@
 				3560F4C2193260B400C282F1 /* PandaVideoAppDelegate.h */,
 				3560F4C3193260B400C282F1 /* PandaVideoAppDelegate.m */,
 				3560F4C5193260B400C282F1 /* Main.storyboard */,
-				3560F4C8193260B400C282F1 /* PandaVideoViewController.h */,
-				3560F4C9193260B400C282F1 /* PandaVideoViewController.m */,
+				35F13FFA19379D5300133171 /* UI */,
 				3560F4CB193260B400C282F1 /* Images.xcassets */,
 				3560F4BA193260B400C282F1 /* Supporting Files */,
+				3560F4EB193262A000C282F1 /* PandaVideoLib */,
 			);
 			path = HttpLiveBroadcast;
 			sourceTree = "<group>";
@@ -152,6 +203,82 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3560F4EB193262A000C282F1 /* PandaVideoLib */ = {
+			isa = PBXGroup;
+			children = (
+				35F13FFB19379D6100133171 /* Vendor */,
+				3560F4E81932629B00C282F1 /* PandaVideoLib.h */,
+				3560F4E91932629B00C282F1 /* PandaVideoLib.m */,
+				35F13FF71937569200133171 /* PandaVideoFileUpload.h */,
+				35F13FF81937569200133171 /* PandaVideoFileUpload.m */,
+			);
+			name = PandaVideoLib;
+			sourceTree = "<group>";
+		};
+		35F13FFA19379D5300133171 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3560F4C8193260B400C282F1 /* PandaVideoViewController.h */,
+				3560F4C9193260B400C282F1 /* PandaVideoViewController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		35F13FFB19379D6100133171 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				35F140821937A22400133171 /* Reachability */,
+				35F13FFE19379EBC00133171 /* ASIHttpRequest */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		35F13FFE19379EBC00133171 /* ASIHttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				35F13FFF19379EC700133171 /* ASIAuthenticationDialog.h */,
+				35F1400019379EC700133171 /* ASIAuthenticationDialog.m */,
+				35F1400119379EC700133171 /* ASICacheDelegate.h */,
+				35F1400219379EC700133171 /* ASIDataCompressor.h */,
+				35F1400319379EC700133171 /* ASIDataCompressor.m */,
+				35F1400419379EC700133171 /* ASIDataDecompressor.h */,
+				35F1400519379EC700133171 /* ASIDataDecompressor.m */,
+				35F1400619379EC700133171 /* ASIDownloadCache.h */,
+				35F1400719379EC700133171 /* ASIDownloadCache.m */,
+				35F1400819379EC700133171 /* ASIFormDataRequest.h */,
+				35F1400919379EC700133171 /* ASIFormDataRequest.m */,
+				35F1400A19379EC700133171 /* ASIHTTPRequest.h */,
+				35F1400B19379EC700133171 /* ASIHTTPRequest.m */,
+				35F1400C19379EC700133171 /* ASIHTTPRequestConfig.h */,
+				35F1400D19379EC700133171 /* ASIHTTPRequestDelegate.h */,
+				35F1400E19379EC700133171 /* ASIInputStream.h */,
+				35F1400F19379EC700133171 /* ASIInputStream.m */,
+				35F1401019379EC700133171 /* ASINetworkQueue.h */,
+				35F1401119379EC700133171 /* ASINetworkQueue.m */,
+				35F1401219379EC700133171 /* ASIProgressDelegate.h */,
+				35F1401319379EC700133171 /* ASIWebPageRequest */,
+			);
+			name = ASIHttpRequest;
+			sourceTree = "<group>";
+		};
+		35F1401319379EC700133171 /* ASIWebPageRequest */ = {
+			isa = PBXGroup;
+			children = (
+				35F1401419379EC700133171 /* ASIWebPageRequest.h */,
+				35F1401519379EC700133171 /* ASIWebPageRequest.m */,
+			);
+			path = ASIWebPageRequest;
+			sourceTree = "<group>";
+		};
+		35F140821937A22400133171 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				35F140831937A23300133171 /* Reachability.h */,
+				35F140841937A23300133171 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,24 +299,6 @@
 			productReference = 3560F4B0193260B400C282F1 /* HttpLiveBroadcast.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3560F4D0193260B400C282F1 /* HttpLiveBroadcastTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3560F4E5193260B400C282F1 /* Build configuration list for PBXNativeTarget "HttpLiveBroadcastTests" */;
-			buildPhases = (
-				3560F4CD193260B400C282F1 /* Sources */,
-				3560F4CE193260B400C282F1 /* Frameworks */,
-				3560F4CF193260B400C282F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3560F4D7193260B400C282F1 /* PBXTargetDependency */,
-			);
-			name = HttpLiveBroadcastTests;
-			productName = HttpLiveBroadcastTests;
-			productReference = 3560F4D1193260B400C282F1 /* HttpLiveBroadcastTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,11 +308,6 @@
 				CLASSPREFIX = PandaVideo;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Panda OS";
-				TargetAttributes = {
-					3560F4D0193260B400C282F1 = {
-						TestTargetID = 3560F4AF193260B400C282F1;
-					};
-				};
 			};
 			buildConfigurationList = 3560F4AB193260B400C282F1 /* Build configuration list for PBXProject "HttpLiveBroadcast" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -219,7 +323,6 @@
 			projectRoot = "";
 			targets = (
 				3560F4AF193260B400C282F1 /* HttpLiveBroadcast */,
-				3560F4D0193260B400C282F1 /* HttpLiveBroadcastTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,14 +338,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3560F4CF193260B400C282F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3560F4DD193260B400C282F1 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,29 +345,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3560F4EA1932629B00C282F1 /* PandaVideoLib.m in Sources */,
+				35F1405119379EC700133171 /* ASIAuthenticationDialog.m in Sources */,
+				35F1405219379EC700133171 /* ASIDataCompressor.m in Sources */,
+				35F13FF91937569200133171 /* PandaVideoFileUpload.m in Sources */,
+				35F140851937A23300133171 /* Reachability.m in Sources */,
 				3560F4C0193260B400C282F1 /* main.m in Sources */,
+				35F1405619379EC700133171 /* ASIHTTPRequest.m in Sources */,
+				35F1405519379EC700133171 /* ASIFormDataRequest.m in Sources */,
+				35F1405419379EC700133171 /* ASIDownloadCache.m in Sources */,
+				35F1405719379EC700133171 /* ASIInputStream.m in Sources */,
+				35F1405919379EC700133171 /* ASIWebPageRequest.m in Sources */,
+				35F1405319379EC700133171 /* ASIDataDecompressor.m in Sources */,
+				35F1405819379EC700133171 /* ASINetworkQueue.m in Sources */,
 				3560F4C4193260B400C282F1 /* PandaVideoAppDelegate.m in Sources */,
 				3560F4CA193260B400C282F1 /* PandaVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3560F4CD193260B400C282F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3560F4DF193260B400C282F1 /* HttpLiveBroadcastTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3560F4D7193260B400C282F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3560F4AF193260B400C282F1 /* HttpLiveBroadcast */;
-			targetProxy = 3560F4D6193260B400C282F1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3560F4BC193260B400C282F1 /* InfoPlist.strings */ = {
@@ -375,11 +466,21 @@
 		3560F4E3193260B400C282F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "PandaOS-Appicon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "PandaOS-Launchimage";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDK_DIR}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HttpLiveBroadcast/HttpLiveBroadcast-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,53 +489,23 @@
 		3560F4E4193260B400C282F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "PandaOS-Appicon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "PandaOS-Launchimage";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDK_DIR}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HttpLiveBroadcast/HttpLiveBroadcast-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		3560F4E6193260B400C282F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HttpLiveBroadcast.app/HttpLiveBroadcast";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "HttpLiveBroadcastTests/HttpLiveBroadcastTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3560F4E7193260B400C282F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HttpLiveBroadcast.app/HttpLiveBroadcast";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
-				INFOPLIST_FILE = "HttpLiveBroadcastTests/HttpLiveBroadcastTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -457,14 +528,7 @@
 				3560F4E4193260B400C282F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		3560F4E5193260B400C282F1 /* Build configuration list for PBXNativeTarget "HttpLiveBroadcastTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3560F4E6193260B400C282F1 /* Debug */,
-				3560F4E7193260B400C282F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
