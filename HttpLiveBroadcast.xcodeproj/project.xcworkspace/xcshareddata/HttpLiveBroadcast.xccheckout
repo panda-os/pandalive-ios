@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C0E438EB-6A22-4D1E-8808-5F63DC7F9DD4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HttpLiveBroadcast</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F47248D2-6DD0-410B-8C8A-791E3EC00877</key>
+		<string>https://bitbucket.org/pandaos/panda-http-live-stream-lib-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HttpLiveBroadcast.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F47248D2-6DD0-410B-8C8A-791E3EC00877</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/pandaos/panda-http-live-stream-lib-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F47248D2-6DD0-410B-8C8A-791E3EC00877</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F47248D2-6DD0-410B-8C8A-791E3EC00877</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HttpLiveBroadcast</string>
+		</dict>
+	</array>
+</dict>
+</plist>
