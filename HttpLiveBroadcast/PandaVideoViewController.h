@@ -10,7 +10,7 @@
 #import "PandaVideoLib.h"
 #import "PandaVideoFileUpload.h"
 
-@interface PandaVideoViewController : UIViewController
+@interface PandaVideoViewController : UIViewController <PandaVideoLibDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -23,9 +23,16 @@
 
 - (IBAction)flipAction:(id)sender;
 
+- (void) captureReady;
+
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *flipButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *fileProgress;
+
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressView;
 
 
 @end

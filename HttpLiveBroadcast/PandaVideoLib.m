@@ -26,13 +26,20 @@ static PandaVideoLib *instance =nil;
             NSLog(@"Initializing PandaVideoLib Instance");
             instance= [PandaVideoLib new];
             [instance initCaptureSession];
-            instance.uploadQueue = [[NSMutableArray alloc] init];
-            
-            
+            instance.fileUpload = [[PandaVideoFileUpload alloc] init];
+            instance.livePublish = [[PandaVideoLivePublish alloc] init];
+            [instance.fileUpload setDelegate:instance];
+            [instance.fileUpload setProgressDelegate:instance];
+
+            [instance.livePublish setDelegate:instance];
+
         }
     }
     return instance;
 }
+
+@synthesize apiUrl;
+@synthesize streamName;
 
 - (AVCaptureVideoPreviewLayer *) getPreviewLayer {
     return self.previewLayer;
@@ -47,14 +54,29 @@ static PandaVideoLib *instance =nil;
     // init capture session
     self.captureSession = [[AVCaptureSession alloc] init];
     
+    // set default quality
+//    self.captureQuality = AVCaptureSessionPresetMedium;
+    self.captureQuality = AVCaptureSessionPresetMedium;
+
     
     // begin configuration
     [self.captureSession beginConfiguration];
 
-    
+    self.captureSession.sessionPreset = self.captureQuality;
+
     // init audio capture device
     AVCaptureDevice *videoCaptureDevice = [self frontCamera];
     self.currentCamera = videoCaptureDevice;
+    
+    // set autofocus
+    if([self.currentCamera isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus])
+    {
+        if ( [self.currentCamera lockForConfiguration:NULL] == YES ) {
+            [self.currentCamera setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
+            [self.currentCamera unlockForConfiguration];
+        }
+    }
+    
     
     NSError *error = nil;
     AVCaptureDeviceInput *videoCaptureInput = [AVCaptureDeviceInput deviceInputWithDevice:videoCaptureDevice error:&error];
@@ -106,10 +128,6 @@ static PandaVideoLib *instance =nil;
 
 
 
-
-
-
-
 - (AVCaptureSession *) startRecordingSession {
 
     
@@ -117,17 +135,9 @@ static PandaVideoLib *instance =nil;
     NSURL *outputUrl = [self getOutputFileUrl];
     [self.fileOutput startRecordingToOutputFileURL:outputUrl recordingDelegate:self];
     
-    [self.assetWriter startWriting];
     
     // set recording flag
     self.recording = YES;
-    
-//    self.fileUploadTimer = [NSTimer scheduledTimerWithTimeInterval:5
-//                                     target:self
-//                                   selector:@selector(uploadFiles:)
-//                                   userInfo:nil
-//                                    repeats:YES];
-    
     
     return self.captureSession;
 }
@@ -139,6 +149,7 @@ static PandaVideoLib *instance =nil;
 
     
     [self.fileOutput stopRecording];
+    [self.fileUpload stopUpload];
     [self.fileUploadTimer invalidate];
 }
 
@@ -153,13 +164,32 @@ static PandaVideoLib *instance =nil;
     NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     // NSTimeInterval is defined as double
     NSNumber *timeStampObj = [NSNumber numberWithDouble: timeStamp];
-    NSString *fileName = [NSString stringWithFormat:@"leon-%@.mp4",timeStampObj];
-    
+    NSString *fileName = [[NSString stringWithFormat:@"livestream-%@.mp4",timeStampObj] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //@TODO: Save in caches path
     NSString *documentsDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSURL *documentsDirUrl = [NSURL fileURLWithPath:documentsDirPath isDirectory:YES];
     NSURL *url = [NSURL URLWithString:fileName relativeToURL:documentsDirUrl];
     
     return [url absoluteURL];
+}
+
+// delete a file by name from Documents folder
+- (void) deleteFile:(NSString *)fileName {
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:fileName];
+    NSError *error;
+    BOOL success = [fileManager removeItemAtPath:filePath error:&error];
+    if (success) {
+        NSLog(@"Successfuly removed file: %@ ",filePath);
+    }
+    else
+    {
+        NSLog(@"Could not delete file -:%@ ",[error localizedDescription]);
+    }
+
 }
 
 
@@ -180,12 +210,27 @@ static PandaVideoLib *instance =nil;
         newCamera = [self frontCamera];
 
     }
+
+    // set autofocus
+    if([newCamera isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus])
+    {
+        if ( [newCamera lockForConfiguration:NULL] == YES ) {
+            [newCamera setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
+            [newCamera unlockForConfiguration];
+        }
+    }
     
+    
+    self.captureSession.sessionPreset = self.captureQuality;
+
+
     // remove current input and add new input instead
     AVCaptureDeviceInput *videoCaptureInput = [AVCaptureDeviceInput deviceInputWithDevice:newCamera error:&error];
     [self.captureSession removeInput:self.videoInput];
     [self.captureSession addInput:videoCaptureInput];
     self.videoInput = videoCaptureInput;
+    
+    [self setFileWriterOrientation:self.fileOutput];
     
     // commit configuration of capture session
     [self.captureSession commitConfiguration];
@@ -233,6 +278,22 @@ static PandaVideoLib *instance =nil;
     }
 }
 
+
+- (void) cleanupDocumentsDir
+{
+    NSLog(@"Cleaning up documents directory");
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *documentsDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSError *error = nil;
+    for (NSString *path in [fm contentsOfDirectoryAtPath:documentsDirPath error:&error]) {
+        NSString *fullPath = [documentsDirPath stringByAppendingPathComponent:path];
+        BOOL success = [fm removeItemAtPath:fullPath error:&error];
+        
+        if (!success || error) {
+            NSLog(@"Failed to delete file %@ in directory %@", path, documentsDirPath);
+        }
+    }
+}
 
 
 #pragma mark - private methods
@@ -300,14 +361,78 @@ static PandaVideoLib *instance =nil;
     NSLog(@"Attaching file writer");
     AVCaptureMovieFileOutput *fileOutput = [[AVCaptureMovieFileOutput alloc] init];
     
-    // set fragment interval to 10 seconds
+    // set fragment interval to 5 seconds
     [fileOutput setMovieFragmentInterval:CMTimeMakeWithSeconds(5, 1)];
     [fileOutput setMaxRecordedDuration:CMTimeMakeWithSeconds(5,1)];
     
     [self.captureSession addOutput:fileOutput];
     
+    [self setFileWriterOrientation:fileOutput];
     
     return fileOutput;
+}
+
+
+/** 
+ *for flipping of video
+ **/
+- (void) setFileWriterOrientation:(AVCaptureMovieFileOutput*)fileOutput {
+   
+    for ( AVCaptureConnection *connection in [fileOutput connections] )
+    {
+        for ( AVCaptureInputPort *port in [connection inputPorts] )
+        {
+            if ( [[port mediaType] isEqual:AVMediaTypeVideo] )
+            {
+                [connection setVideoOrientation:self.videoOrientation];
+               // NSLog(@"orientation -  %d", self.videoOrientation);
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+#pragma mark - initiate stream
+
+
+- (void) initStream
+{
+    [self cleanupDocumentsDir];
+    
+    [self.livePublish setApiUrl:[NSURL URLWithString:self.apiUrl]];
+    [self.livePublish setStreamName:self.streamName];
+    
+    [self.livePublish publishStream];
+    
+}
+
+#pragma mark - init stream callbacks
+
+- (void) streamPublished:(ASIHTTPRequest*)request
+{
+    // Use when fetching text data
+    NSString *responseString = [request responseString];
+    
+    // check which request was finished
+    NSLog(@"Request finished: Response %@", responseString);
+    
+    // parse the json
+    NSData *jsonData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error=nil;
+
+    NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    NSDictionary *entry = [parsedData objectForKey:@"entry"];
+    self.fileUpload.entryId = [entry objectForKey:@"id"];
+    
+
+    // call capture ready
+    [self.delegate captureReady];
+    
 }
 
 
@@ -316,14 +441,10 @@ static PandaVideoLib *instance =nil;
 
 - (void) uploadSingleFile:(NSURL*)fileUrl
 {
-    NSString *apiUrl = @"http://10.0.0.125:8080/pvp/pvpserver/public/live";
-    PandaVideoFileUpload *fileUpload = [[PandaVideoFileUpload alloc] init];
-    [fileUpload setFileUrl:fileUrl];
-    [fileUpload setApiUrl:[NSURL URLWithString:apiUrl]];
+    [self.fileUpload setApiUrl:[NSURL URLWithString:self.apiUrl]];
     
     NSLog(@"Uploading file %@ to url: %@ via POST", [PandaVideoFileUpload getFileName:fileUrl], apiUrl );
-    [fileUpload uploadFile];
-    [self.uploadQueue addObject:fileUpload];
+    [self.fileUpload uploadFile:fileUrl];
     
     
     
@@ -335,6 +456,34 @@ static PandaVideoLib *instance =nil;
     
     
     
+}
+
+
+#pragma mark - PandaVideoFileUploadDelegate callback to handle deletion of file
+
+- (void) uploadFinished:(ASIFormDataRequest*)request
+{
+    NSDictionary *userInfo = [request userInfo];
+    NSString *fileName = [userInfo objectForKey:@"fileName"];
+    
+    NSLog(@"Trying to delete the file");
+    [self deleteFile:fileName];
+}
+
+- (void) uploadFailed:(ASIFormDataRequest*)request
+{
+    NSDictionary *userInfo = [request userInfo];
+    NSString *fileName = [userInfo objectForKey:@"fileName"];
+    
+    NSLog(@"Trying to delete the file");
+    [self deleteFile:fileName];
+}
+
+#pragma mark - PandaVideoFileProgressDelegate callback to handle deletion of file
+
+-(void)setProgress:(float)newProgress
+{
+    [self.delegate setProgress:newProgress];
 }
 
 #pragma mark - orientation change detection
@@ -365,6 +514,9 @@ static PandaVideoLib *instance =nil;
             default:
                 break;
         }
+        self.videoOrientation = newOrientation;
+
+        [self setFileWriterOrientation:self.fileOutput];
         
         if(newOrientation)
         {

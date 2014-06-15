@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353FA9C91944E1EF00D4BDC2 /* PandaVideoLivePublish.m in Sources */ = {isa = PBXBuildFile; fileRef = 353FA9C81944E1EF00D4BDC2 /* PandaVideoLivePublish.m */; };
 		3560F4B4193260B400C282F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4B3193260B400C282F1 /* Foundation.framework */; };
 		3560F4B6193260B400C282F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4B5193260B400C282F1 /* CoreGraphics.framework */; };
 		3560F4B8193260B400C282F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4B7193260B400C282F1 /* UIKit.framework */; };
@@ -21,6 +22,7 @@
 		3560F4EF193262C000C282F1 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4EE193262C000C282F1 /* CoreVideo.framework */; };
 		3560F4F1193262C800C282F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4F0193262C800C282F1 /* AVFoundation.framework */; };
 		3560F4F3193262D000C282F1 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3560F4F2193262D000C282F1 /* CoreAudio.framework */; };
+		35CB9B751941FE3C00370B10 /* PandaVideoSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CB9B741941FE3C00370B10 /* PandaVideoSettingsViewController.m */; };
 		35F13FF91937569200133171 /* PandaVideoFileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F13FF81937569200133171 /* PandaVideoFileUpload.m */; };
 		35F1405119379EC700133171 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400019379EC700133171 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35F1405219379EC700133171 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1400319379EC700133171 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		353FA9C71944E1EF00D4BDC2 /* PandaVideoLivePublish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaVideoLivePublish.h; sourceTree = "<group>"; };
+		353FA9C81944E1EF00D4BDC2 /* PandaVideoLivePublish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaVideoLivePublish.m; sourceTree = "<group>"; };
 		3560F4B0193260B400C282F1 /* HttpLiveBroadcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HttpLiveBroadcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3560F4B3193260B400C282F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3560F4B5193260B400C282F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +68,8 @@
 		3560F4EE193262C000C282F1 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		3560F4F0193262C800C282F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3560F4F2193262D000C282F1 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		35CB9B731941FE3C00370B10 /* PandaVideoSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaVideoSettingsViewController.h; sourceTree = "<group>"; };
+		35CB9B741941FE3C00370B10 /* PandaVideoSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaVideoSettingsViewController.m; sourceTree = "<group>"; };
 		35F13FF71937569200133171 /* PandaVideoFileUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaVideoFileUpload.h; sourceTree = "<group>"; };
 		35F13FF81937569200133171 /* PandaVideoFileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaVideoFileUpload.m; sourceTree = "<group>"; };
 		35F13FFF19379EC700133171 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -165,7 +171,6 @@
 			children = (
 				3560F4C2193260B400C282F1 /* PandaVideoAppDelegate.h */,
 				3560F4C3193260B400C282F1 /* PandaVideoAppDelegate.m */,
-				3560F4C5193260B400C282F1 /* Main.storyboard */,
 				35F13FFA19379D5300133171 /* UI */,
 				3560F4CB193260B400C282F1 /* Images.xcassets */,
 				3560F4BA193260B400C282F1 /* Supporting Files */,
@@ -211,15 +216,36 @@
 				3560F4E91932629B00C282F1 /* PandaVideoLib.m */,
 				35F13FF71937569200133171 /* PandaVideoFileUpload.h */,
 				35F13FF81937569200133171 /* PandaVideoFileUpload.m */,
+				353FA9C71944E1EF00D4BDC2 /* PandaVideoLivePublish.h */,
+				353FA9C81944E1EF00D4BDC2 /* PandaVideoLivePublish.m */,
 			);
 			name = PandaVideoLib;
+			sourceTree = "<group>";
+		};
+		35CB9B711941FE0A00370B10 /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				3560F4C8193260B400C282F1 /* PandaVideoViewController.h */,
+				3560F4C9193260B400C282F1 /* PandaVideoViewController.m */,
+			);
+			name = VideoView;
+			sourceTree = "<group>";
+		};
+		35CB9B721941FE1700370B10 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				35CB9B731941FE3C00370B10 /* PandaVideoSettingsViewController.h */,
+				35CB9B741941FE3C00370B10 /* PandaVideoSettingsViewController.m */,
+			);
+			name = SettingsView;
 			sourceTree = "<group>";
 		};
 		35F13FFA19379D5300133171 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3560F4C8193260B400C282F1 /* PandaVideoViewController.h */,
-				3560F4C9193260B400C282F1 /* PandaVideoViewController.m */,
+				3560F4C5193260B400C282F1 /* Main.storyboard */,
+				35CB9B721941FE1700370B10 /* SettingsView */,
+				35CB9B711941FE0A00370B10 /* VideoView */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -308,6 +334,11 @@
 				CLASSPREFIX = PandaVideo;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Panda OS";
+				TargetAttributes = {
+					3560F4AF193260B400C282F1 = {
+						DevelopmentTeam = M92AHU65HN;
+					};
+				};
 			};
 			buildConfigurationList = 3560F4AB193260B400C282F1 /* Build configuration list for PBXProject "HttpLiveBroadcast" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -347,6 +378,7 @@
 			files = (
 				3560F4EA1932629B00C282F1 /* PandaVideoLib.m in Sources */,
 				35F1405119379EC700133171 /* ASIAuthenticationDialog.m in Sources */,
+				35CB9B751941FE3C00370B10 /* PandaVideoSettingsViewController.m in Sources */,
 				35F1405219379EC700133171 /* ASIDataCompressor.m in Sources */,
 				35F13FF91937569200133171 /* PandaVideoFileUpload.m in Sources */,
 				35F140851937A23300133171 /* Reachability.m in Sources */,
@@ -357,6 +389,7 @@
 				35F1405719379EC700133171 /* ASIInputStream.m in Sources */,
 				35F1405919379EC700133171 /* ASIWebPageRequest.m in Sources */,
 				35F1405319379EC700133171 /* ASIDataDecompressor.m in Sources */,
+				353FA9C91944E1EF00D4BDC2 /* PandaVideoLivePublish.m in Sources */,
 				35F1405819379EC700133171 /* ASINetworkQueue.m in Sources */,
 				3560F4C4193260B400C282F1 /* PandaVideoAppDelegate.m in Sources */,
 				3560F4CA193260B400C282F1 /* PandaVideoViewController.m in Sources */,
@@ -468,6 +501,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "PandaOS-Appicon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "PandaOS-Launchimage";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -482,6 +517,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -491,6 +527,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "PandaOS-Appicon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "PandaOS-Launchimage";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HttpLiveBroadcast/HttpLiveBroadcast-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -505,6 +543,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
